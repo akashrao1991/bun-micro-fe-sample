@@ -2,6 +2,19 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Objective
+This project is to demonstrate what a micro front-end is
+
+## Project was made using the following URL : 
+https://blog.bitsrc.io/build-microfrontend-in-react-in-3-easy-steps-74790fd0c9fb
+
+## Command to start in dev mode : 
+`yarn dev` 
+
+or 
+
+`bun dev`
+
 ## Available Scripts
 
 In the project directory, you can run:

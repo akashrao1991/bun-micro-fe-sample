@@ -4,6 +4,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
+const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 
 const isProduction = process.env.NODE_ENV == 'production';
 
@@ -25,9 +26,15 @@ const config = {
         new HtmlWebpackPlugin({
             template: 'public/index.html',
         }),
-
         // Add your plugins here
         // Learn more about plugins from https://webpack.js.org/configuration/plugins/
+        new ModuleFederationPlugin({
+            name:"FIRST_APP",
+            filename: "remoteEntry.js",
+            exposes: {
+              "./app": "./src/components/App",
+            },
+        }),
     ],
     module: {
         rules: [
