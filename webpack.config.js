@@ -42,6 +42,11 @@ const config = {
                 exclude: ['/node_modules/'],
             },
             {
+                test: /\.(jsx|js)$/i,
+                use: ["babel-loader"],
+                exclude: /node_modules/,
+              },
+            {
                 test: /\.css$/i,
                 use: [stylesHandler,'css-loader'],
             },
